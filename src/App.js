@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './Loading';
 import Loading from './Loading';
 import Tours from './Tours';
 import './App.css'
