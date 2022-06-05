@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Loading';
 import Loading from './Loading';
+import Tours from './Tours';
 
 function App() {
   // App Level State
@@ -40,7 +41,7 @@ function App() {
   }
   return (
     <>
-      <h2>Tours Web App</h2>
+      <Tours />
     </>
   )
 }
