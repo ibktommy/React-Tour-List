@@ -9,9 +9,9 @@ const Tours = ({ tours }) => {
         <div className='line'></div>
       </div>
 
-      <div>
+      <div className='w-full container mx-auto mt-10'>
         {tours.map((tour) => (
-          <Tour key={tour.id} {...tour}></Tour>
+          <Tour key={tour.id} {...tour}/>
         ))}
       </div>
     </main>
