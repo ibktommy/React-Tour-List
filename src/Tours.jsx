@@ -1,8 +1,13 @@
 import React from 'react'
 
-const Tours = () => {
+const Tours = ({ tours }) => {
   return (
-    <div>Tours Component</div>
+    <main>
+        <div className='relative'>
+            <h1 className='font-bold text-center mt-10 text-5xl text-gray-700 pb-2'>Our Tours</h1>
+            <div className='line'></div>
+        </div>
+    </main>
   )
 }
 
