@@ -8,9 +8,14 @@ function App() {
   const [loading, setLoading] = useState(true)
   const [tours, setTours] = useState([])
 
-
   // DATA URL
   const url = 'https://course-api.com/react-tours-project';
+
+  // Function to Delete A Chosen Tor Component
+  function deleteTour(id) {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  }
 
   //  Fetching the Data
   const fetchData = async () => {
@@ -21,9 +26,8 @@ function App() {
       const toursData = await response.json()
       setLoading(false)
       setTours(toursData)
-      console.log(toursData)
     } catch (error) {
-      setLoading(false)
+      setLoading(true)
     }
   }
 
@@ -41,7 +45,7 @@ function App() {
   }
   return (
     <>
-      <Tours tours={tours} />
+      <Tours tours={tours} deleteTour={deleteTour} />
     </>
   )
 }

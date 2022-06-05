@@ -1,7 +1,7 @@
 import React from 'react'
 import Tour from './Tour'
 
-const Tours = ({ tours }) => {
+const Tours = ({ tours, deleteTour }) => {
   return (
     <main>
       <div className='relative'>
@@ -11,7 +11,7 @@ const Tours = ({ tours }) => {
 
       <div className='w-full container mx-auto mt-10'>
         {tours.map((tour) => (
-          <Tour key={tour.id} {...tour}/>
+          <Tour key={tour.id} {...tour} deleteTour={deleteTour}/>
         ))}
       </div>
     </main>
