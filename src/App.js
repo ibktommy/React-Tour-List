@@ -11,12 +11,6 @@ function App() {
   // DATA URL
   const url = 'https://course-api.com/react-tours-project';
 
-  // Function to Delete A Chosen Tor Component
-  function deleteTour(id) {
-    const newTours = tours.filter((tour) => tour.id !== id);
-    setTours(newTours);
-  }
-
   //  Fetching the Data
   const fetchData = async () => {
     setLoading(true)
@@ -35,6 +29,12 @@ function App() {
     fetchData()
   }, [])
 
+  // Function to Delete A Chosen Tour Component
+  function deleteTour(id) {
+    const newTours = tours.filter((tour) => tour.id !== id);
+    setTours(newTours);
+  }
+
   // Condition to check if "loading" state is true or not
   if (loading) {
     return (
@@ -43,6 +43,23 @@ function App() {
       </main>
     )
   }
+
+  // Condition to check if Tour-state is empty
+  if (tours.length === 0) {
+    return (
+      <>
+        <div className='w-full container mx-auto text-center mt-[5rem]'>
+          <h2 className='font-bold text-4xl mb-6'>No Tours Left</h2>
+          <button
+            className='py-1 px-3 bg-blue-500 text-white rounded'
+            onClick={fetchData}>
+            Refresh
+          </button>
+        </div>
+      </>
+    )
+  }
+
   return (
     <>
       <Tours tours={tours} deleteTour={deleteTour} />
